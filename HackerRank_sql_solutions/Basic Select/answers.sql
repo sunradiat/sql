@@ -62,3 +62,9 @@ from station
 where length(city)>= all(select length(city) from station)
 order by city
 limit 1;
+
+
+# Weather Observation Station 6
+select distinct city
+from station
+where left(city,1) in ("a","e","i","o","u")
