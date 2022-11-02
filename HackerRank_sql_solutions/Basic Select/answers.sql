@@ -68,3 +68,7 @@ limit 1;
 select distinct city
 from station
 where left(city,1) in ("a","e","i","o","u")
+
+
+# Weather Observation Station 7
+select distinct city from station where right(city,1) in ('a','e','i','o','u');
