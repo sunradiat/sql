@@ -40,3 +40,28 @@ where months*salary = (select max(months*salary) from employee);
 select round(sum(LAT_N),2),
 round(sum(LONG_W),2)
 from STATION;
+
+# Weather Observation Station 13
+select round(sum(LAT_N),4)
+from STATION
+where LAT_N > 38.788 and LAT_N < 137.2345;
+
+# Weather Observation Station 14
+select round(max(LAT_N),4)
+from station
+where LAT_N < 137.2345;
+
+# Weather Observation Station 15
+select round(LONG_W,4)
+from station
+where LAT_N = (select max(LAT_N) from station where LAT_N < 137.2345);
+
+# Weather Observation Station 16
+select round(min(LAT_N),4)
+from station
+where LAT_N > 38.7780;
+
+# Weather Observation Station 17
+select round(LONG_W,4)
+from station
+where LAT_N = (SELECT MIN(LAT_N) FROM STATION WHERE LAT_N>38.7780);
