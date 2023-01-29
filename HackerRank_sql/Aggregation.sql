@@ -69,3 +69,10 @@ where LAT_N = (SELECT MIN(LAT_N) FROM STATION WHERE LAT_N>38.7780);
 # Weather Observation Station 18
 select round(ABS(max(LAT_N)-min(LAT_N)) + ABS(MAX(LONG_W)-MIN(LONG_W)),4)
 FROM STATION;
+
+# Weather Observation Station 19
+select round(sqrt(
+        power(min(LAT_N)-MAX(LAT_N),2)+POWER(MAX(LONG_W)-min(LONG_W),2)
+    )
+,4)
+from station
